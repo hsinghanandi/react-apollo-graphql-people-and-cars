@@ -53,7 +53,7 @@ export const GET_CARS = gql`
   }
 `
 export const GET_PERSON_WITH_CARS = gql`
-  {
+  query Query($personId: String!) {
     personWithCar(id: $personId) {
       person {
         id

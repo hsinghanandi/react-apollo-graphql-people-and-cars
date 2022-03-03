@@ -12,7 +12,6 @@ const getStyles = (props) => ({
 })
 
 const Car = ({ car, people }) => {
-  const [id] = useState(car.id)
   const [year, setYear] = useState(car.year)
   const [make, setMake] = useState(car.make)
   const [model, setModel] = useState(car.model)
@@ -60,12 +59,12 @@ const Car = ({ car, people }) => {
       ) : (
         <Card
           type="inner"
-          key={id}
+          key={car.id}
           style={styles.card}
           actions={[
             <EditOutlined key="edit" onClick={handleButtonClick} />,
             <RemoveCar
-              id={id}
+              id={car.id}
               year={year}
               make={make}
               model={model}

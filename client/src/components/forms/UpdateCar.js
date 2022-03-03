@@ -3,14 +3,6 @@ import { Form, Input, Button, Select, InputNumber } from 'antd'
 import { useMutation } from '@apollo/client'
 import { UPDATE_CAR } from '../../queries'
 
-const getStyles = (props) => ({
-  form: {
-    width: '600px',
-    display: 'flex',
-    justifyContent: 'center',
-  },
-})
-
 const UpdateCar = (props) => {
   const [id] = useState(props.car.id)
   const [year, setYear] = useState(props.car.year)
@@ -27,8 +19,6 @@ const UpdateCar = (props) => {
   useEffect(() => {
     forceUpdate()
   }, [])
-
-  const styles = getStyles()
 
   const onFinish = (values) => {
     const { year, make, model, price, personId } = values
@@ -86,7 +76,6 @@ const UpdateCar = (props) => {
       name="update-car-form"
       layout="vertical"
       onFinish={onFinish}
-      //   style={styles.form}
       initialValues={{
         year: year,
         make: make,

@@ -13,7 +13,6 @@ const getStyles = () => ({
 })
 
 const Person = (props) => {
-  const [id] = useState(props.id)
   const [firstName, setFirstName] = useState(props.firstName)
   const [lastName, setLastName] = useState(props.lastName)
   const [editMode, setEditMode] = useState(false)
@@ -41,7 +40,7 @@ const Person = (props) => {
     <div>
       {editMode ? (
         <UpdatePerson
-          id={id}
+          id={props.id}
           firstName={firstName}
           lastName={lastName}
           onButtonClick={handleButtonClick}
@@ -53,11 +52,15 @@ const Person = (props) => {
           style={styles.card}
           actions={[
             <EditOutlined key="edit" onClick={handleButtonClick} />,
-            <RemovePerson id={id} firstName={firstName} lastName={lastName} />,
+            <RemovePerson
+              id={props.id}
+              firstName={firstName}
+              lastName={lastName}
+            />,
           ]}
         >
-          <Cars personId={id} people={props.people} />
-          <Link to={`/people/${id}`}>Learn More</Link>
+          <Cars personId={props.id} people={props.people} />
+          <Link to={`/people/${props.id}`}>Learn More</Link>
         </Card>
       )}
     </div>
