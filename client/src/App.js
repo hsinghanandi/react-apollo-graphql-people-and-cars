@@ -3,6 +3,7 @@ import './App.css'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import Title from './components/layout/Title'
 import AddPerson from './components/forms/AddPerson'
+import AddCar from './components/forms/AddCar'
 import People from './components/lists/People'
 
 const client = new ApolloClient({
@@ -15,6 +16,7 @@ const App = () => (
     <div className="App">
       <Title />
       <AddPerson />
+      <AddCar />
       <People />
     </div>
   </ApolloProvider>

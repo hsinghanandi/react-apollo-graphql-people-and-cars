@@ -5,9 +5,9 @@ import { GET_PEOPLE, REMOVE_PERSON } from '../../queries'
 
 const RemovePerson = ({ id, firstName, lastName }) => {
   const [removePerson] = useMutation(REMOVE_PERSON, {
-    update(cache, { data: { removePerson } }) {
-      const { people } = cache.readQuery({ query: GET_PEOPLE })
-      cache.writeQuery({
+    update(proxy, { data: { removePerson } }) {
+      const { people } = proxy.readQuery({ query: GET_PEOPLE })
+      proxy.writeQuery({
         query: GET_PEOPLE,
         data: {
           people: filter(people, (p) => {

@@ -3,6 +3,7 @@ import { Card } from 'antd'
 import { EditOutlined } from '@ant-design/icons'
 import UpdatePerson from '../forms/UpdatePerson'
 import RemovePerson from '../buttons/RemovePerson'
+import Cars from '../lists/Cars'
 
 const getStyles = () => ({
   card: {
@@ -54,7 +55,7 @@ const Person = (props) => {
             <RemovePerson id={id} firstName={firstName} lastName={lastName} />,
           ]}
         >
-          {firstName} {lastName}
+          <Cars personId={id} people={props.people} />
         </Card>
       )}
     </div>

@@ -70,14 +70,14 @@ const AddPerson = () => {
           name="firstName"
           rules={[{ required: true, message: 'Please input your first name!' }]}
         >
-          <Input placeholder="i.e. John" />
+          <Input placeholder="Firstname" />
         </Form.Item>
 
         <Form.Item
           name="lastName"
           rules={[{ required: true, message: 'Please input your last name!' }]}
         >
-          <Input placeholder="i.e. Smith" />
+          <Input placeholder="Lastname" />
         </Form.Item>
 
         <Form.Item shouldUpdate={true}>

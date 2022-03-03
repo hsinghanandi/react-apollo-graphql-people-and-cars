@@ -9,7 +9,7 @@ const getStyles = () => ({
 const Title = (props) => {
   const styles = getStyles()
 
-  return <h1 style={styles.title}>It's all about who you know!</h1>
+  return <h1 style={styles.title}>It's all about People and their Cars!</h1>
 }
 
 export default Title
