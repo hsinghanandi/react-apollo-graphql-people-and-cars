@@ -7,7 +7,7 @@ import RemoveCar from '../buttons/RemoveCar'
 const getStyles = (props) => ({
   card: {
     width: '350px',
-    border: '1px solid black',
+    border: '1px solid #f0f0f0',
   },
 })
 

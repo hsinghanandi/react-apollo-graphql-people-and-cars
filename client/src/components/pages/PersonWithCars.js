@@ -6,7 +6,7 @@ import Error from '../listitems/Error'
 
 const styles = {
   personCard: {
-    display: 'contents',
+    width: '400px',
   },
   innerCardCars: {
     width: '380px',
@@ -35,15 +35,19 @@ const PersonWithCars = () => {
           style={styles.personCard}
           extra={<Link to="/">Go Back Home</Link>}
         >
-          <List>
-            {data.personWithCar.cars.map((car) => (
-              <List.Item key={car.id}>
-                <Card type="inner" style={styles.innerCardCars}>
-                  {car.year} {car.make} {car.model}: ${car.price}
-                </Card>
-              </List.Item>
-            ))}
-          </List>
+          {data.personWithCar.cars.length ? (
+            <List>
+              {data.personWithCar.cars.map((car) => (
+                <List.Item key={car.id}>
+                  <Card type="inner" style={styles.innerCardCars}>
+                    {car.year} {car.make} {car.model}: ${car.price}
+                  </Card>
+                </List.Item>
+              ))}
+            </List>
+          ) : (
+            <h3>No Cars Found!!</h3>
+          )}
         </Card>
       ) : (
         <Error />

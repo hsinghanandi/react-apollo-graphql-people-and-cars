@@ -83,11 +83,18 @@ const AddCar = () => {
             name="year"
             rules={[{ required: true, message: 'Please input car year!' }]}
           >
-            <InputNumber min={1990} max={2022} placeholder="Year" />
+            <InputNumber
+              size="large"
+              style={{ width: '130px' }}
+              min={1990}
+              max={2022}
+              placeholder="Year"
+            />
           </Form.Item>
 
           <Form.Item
             name="make"
+            style={{ width: '130px' }}
             rules={[{ required: true, message: 'Please input car make!' }]}
           >
             <Input placeholder="Make" />
@@ -95,6 +102,7 @@ const AddCar = () => {
 
           <Form.Item
             name="model"
+            style={{ width: '130px' }}
             rules={[{ required: true, message: 'Please input car model!' }]}
           >
             <Input placeholder="Model" />
@@ -105,10 +113,11 @@ const AddCar = () => {
             rules={[{ required: true, message: 'Please input car price!' }]}
           >
             <InputNumber
-              min={0}
-              step={1.0}
-              //   prefix="$"
-              style={{ width: '140px' }}
+              size="large"
+              style={{ width: '130px' }}
+              min={500}
+              step={0.01}
+              // prefix="$"
               placeholder="Price"
             />
           </Form.Item>
@@ -117,7 +126,7 @@ const AddCar = () => {
             name="personId"
             rules={[{ required: true, message: 'Pleae select a person!' }]}
           >
-            <Select placeholder="Select Person">
+            <Select style={{ width: '130px' }} placeholder="Select Person">
               {data.people.map(({ id, firstName, lastName }) => (
                 <Option key={id} value={id}>
                   {firstName} {lastName}

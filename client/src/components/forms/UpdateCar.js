@@ -74,7 +74,7 @@ const UpdateCar = (props) => {
     <Form
       form={form}
       name="update-car-form"
-      layout="vertical"
+      layout="inline"
       onFinish={onFinish}
       initialValues={{
         year: year,
@@ -90,6 +90,8 @@ const UpdateCar = (props) => {
         rules={[{ required: true, message: 'Please input car year!' }]}
       >
         <InputNumber
+          size="large"
+          style={{ width: '130px' }}
           min={1990}
           max={2022}
           onChange={(e) => updateStateVariable('year', e.target.value)}
@@ -98,6 +100,7 @@ const UpdateCar = (props) => {
 
       <Form.Item
         name="make"
+        style={{ width: '130px' }}
         rules={[{ required: true, message: 'Please input car make!' }]}
       >
         <Input onChange={(e) => updateStateVariable('make', e.target.value)} />
@@ -105,6 +108,7 @@ const UpdateCar = (props) => {
 
       <Form.Item
         name="model"
+        style={{ width: '130px' }}
         rules={[{ required: true, message: 'Please input car model!' }]}
       >
         <Input onChange={(e) => updateStateVariable('model', e.target.value)} />
@@ -115,17 +119,19 @@ const UpdateCar = (props) => {
         rules={[{ required: true, message: 'Please input car price!' }]}
       >
         <InputNumber
-          min={0}
-          step={1.0}
-          // prefix="$"
+          size="large"
+          style={{ width: '130px' }}
+          min={1000}
+          step={0.01}
         />
       </Form.Item>
 
       <Form.Item
+        style={{ width: '130px' }}
         name="personId"
         rules={[{ required: true, message: 'Please select a person' }]}
       >
-        <Select>
+        <Select style={{ width: '130px' }}>
           {props.people.map(({ id, firstName, lastName }) => (
             <Option key={id} value={id}>
               {firstName} {lastName}
